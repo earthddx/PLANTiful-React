@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
   notFound: {
     margin:'0px auto',
-    fontSize: '1.6rem'
+    fontSize: '1.6rem',
+    textAlign: 'center'
   }
 }));
 
