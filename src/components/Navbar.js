@@ -34,7 +34,7 @@ export default function Navbar() {
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link className={classes.link} to="/">
-              <EcoIcon style={{ fontSize: 30 }} /> Storeline
+              <EcoIcon style={{ fontSize: 30 }} /> PLANTiful
             </Link>
           </Typography>
           <Typography variant="h6" className={classes.cart}>
