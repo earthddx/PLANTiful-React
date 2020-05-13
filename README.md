@@ -1,4 +1,6 @@
 # eStore
 e commerce website done with React
 
-## soon... ##
+info and pictures are taken from  plants.com  (sorry)
+
+will fill the rest out later...
