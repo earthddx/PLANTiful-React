@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 16,
     fontFamily: "Titillium Web",
   },
+  paperInfo: {
+    marginTop: 10
+  },
   link: {
     textDecoration: "none",
   },
@@ -106,8 +109,8 @@ export default function Details() {
         >
           <div className={classes.infoItems}>
             <div className={classes.paper}>
-              <h1>{title}</h1>${price}
-              <div className={classes.paper}>{info}</div>
+              <h1>{title}</h1><span>${price}</span>
+              <div className={classes.paperInfo}>{info}</div>
               <div className={classes.buttonContainer}>
                 <Grid item md={6} className={classes.button}>
                   <Button
