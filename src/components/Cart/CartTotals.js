@@ -75,7 +75,7 @@ export default function CartTotals({ history }) {
             <span>subtotal: ${cartSubTotal.toFixed(2)}</span>
             <span>tax: ${cartTax.toFixed(2)}</span>
             <span>total: ${cartTotal.toFixed(2)}</span>
-            <PayPal total={cartTotal} clearCart={clearCart} history={history} />
+            <PayPal total={cartTotal} clearCart={clearCart} history={history} /> 
           </div>
         </div>
       </div>

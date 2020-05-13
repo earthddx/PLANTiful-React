@@ -9,10 +9,17 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import theme from "../../theme";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    overflow: "hidden",
+  rootMd: {
+    //overflow: "hidden",
     fontFamily: "Titillium Web",
     fontSize: 18,
+  },
+  rootSm: {
+    //overflow: "hidden",
+    marginTop: 60,
+    fontFamily: "Titillium Web",
+    fontSize: 18,
+
   },
   paper: {
     paddingTop: theme.spacing(2),
@@ -50,7 +57,7 @@ export default function CartItem({ item }) {
   const classes = useStyles();
   const greaterThanSm = useMediaQuery((theme) => theme.breakpoints.up("sm"));
   return greaterThanSm ? (
-    <div className={classes.root}>
+    <div className={classes.rootMd}>
       <Grid container className={classes.paper}>
         <Grid item xs>
           <img src={img} alt="product" style={{ height: "4rem" }} />
@@ -86,7 +93,7 @@ export default function CartItem({ item }) {
       </Grid>
     </div>
   ) : (
-    <>
+    <div className={classes.rootSm}>
       <Grid container className={classes.paper}>
         <Grid item xs>
           <img src={img} alt="product" style={{ height: "5rem" }} />
@@ -111,6 +118,6 @@ export default function CartItem({ item }) {
           </div>
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 }

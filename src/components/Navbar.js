@@ -9,7 +9,11 @@ import EcoIcon from "@material-ui/icons/Eco";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    left: 0,
+    zIndex: 999,
   },
   title: {
     flexGrow: 1,

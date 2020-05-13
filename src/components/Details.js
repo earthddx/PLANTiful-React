@@ -11,36 +11,24 @@ import ImageSlider from "./ImageSlider";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    marginTop:60
   },
-  detailsMd: {
-    //alignItems: "center",
-  },
+  detailsMd: {},
   imageContainerMd: {
-    //position: "relative",
     marginTop: 100,
-    display: 'flex',
-    justifyContent: 'right'
+    display: "flex",
+    justifyContent: "right",
   },
   imageContainerSm: {
-    //position: "relative",
     marginTop: 20,
   },
-  imageMd: {
-    //position: "absolute",
-    //right: 100,
-    //top: "10%",
-  },
+  imageMd: {},
   infoContainerMd: {
-    //position: "relative",
     margin: 30,
     marginTop: 80,
-    //top: 100,
-    //right: 0,
   },
   infoContainerSm: {
-    //position: "relative",
     margin: 20,
-    //top: 100,
     right: 0,
   },
   paper: {
@@ -49,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Titillium Web",
   },
   paperInfo: {
-    marginTop: 10
+    marginTop: 10,
   },
   link: {
     textDecoration: "none",
@@ -58,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   button: {
-    margin: '20px 5px',
+    margin: "20px 5px",
     whiteSpace: "nowrap",
   },
   buttonText: {
@@ -109,7 +97,8 @@ export default function Details() {
         >
           <div className={classes.infoItems}>
             <div className={classes.paper}>
-              <h1>{title}</h1><span>${price}</span>
+              <h1>{title}</h1>
+              <span>${price}</span>
               <div className={classes.paperInfo}>{info}</div>
               <div className={classes.buttonContainer}>
                 <Grid item md={6} className={classes.button}>

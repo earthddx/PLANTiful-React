@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
+    marginTop: 60,
     color: theme.palette.text.primary,
     fontSize: 24,
     fontFamily: 'Titillium Web',
