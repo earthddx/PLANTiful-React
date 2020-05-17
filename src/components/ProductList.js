@@ -6,6 +6,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import Grid from "@material-ui/core/Grid";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Fab from "@material-ui/core/Fab";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import Zoom from "@material-ui/core/Zoom";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     color: "inherit",
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
+    padding: theme.spacing(1, 8, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
@@ -51,9 +56,38 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  scroll: {
+    marginBottom: 20,
+    marginRight: 20,
+    display: 'flex',
+    justifyContent: 'flex-end'
+  }
 }));
 
-export default function ProductList() {
+function ScrollTop(props) {
+  const { children, window } = props;
+  const classes = useStyles();
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  return (
+    <Zoom in={useScrollTrigger(window)}>
+      <div onClick={handleClick} role="presentation" className={classes.root}>
+        {children}
+      </div>
+    </Zoom>
+  );
+}
+
+export default function ProductList(props) {
   const { products } = useContext(Context);
   const classes = useStyles();
   const [term, setTerm] = useState("");
@@ -72,14 +106,7 @@ export default function ProductList() {
 
   return (
     <>
-      {/* <form className={classes.form_text}>
-        <input
-          type="text"
-          value={term}
-          onChange={searchHandler}
-          className={classes.input_text}
-        />
-      </form> */}
+      <CssBaseline />
       <Toolbar className={classes.root}>
         <div className={classes.search}>
           <div className={classes.searchIcon}>
@@ -98,9 +125,17 @@ export default function ProductList() {
           />
         </div>
       </Toolbar>
+      <Toolbar id="back-to-top-anchor" style={{minHeight: 24}}/>
       <Grid container className={classes.root}>
         {pageElements}
       </Grid>
+      <div className={classes.scroll}>
+        <ScrollTop {...props}>
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <KeyboardArrowUpIcon />
+          </Fab>
+        </ScrollTop>
+      </div>
     </>
   );
 }
