@@ -16,8 +16,8 @@ export default function ImageSlider({ images }) {
   return (
     <div className={classes.root}>
       <SimpleImageSlider
-        width={greaterThanMd ? '60vh' : '30vh'}
-        height={greaterThanMd ? '60vh' : '30vh'}
+        width={greaterThanMd ? '60vh' : '40vh'}
+        height={greaterThanMd ? '60vh' : '40vh'}
         images={images}
       />
     </div>

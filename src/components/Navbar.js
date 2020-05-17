@@ -7,9 +7,10 @@ import Typography from "@material-ui/core/Typography";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
 import EcoIcon from "@material-ui/icons/Eco";
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     right: 0,
     left: 0,
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "white",
-  }
+  },
 }));
 
 export default function Navbar() {
